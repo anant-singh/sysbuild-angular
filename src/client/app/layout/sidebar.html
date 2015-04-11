@@ -1,0 +1,13 @@
+﻿<md-toolbar class="md-default-theme sidebar-header">
+    <h1 class="md-toolbar-tools"></h1>
+</md-toolbar>
+
+<md-content class="sidebar-inner md-accent" ng-controller="SidebarController as vm" flex>
+    <ul class="navi">
+        <li class="nlightblue fade-selection-animation" ng-class="vm.isCurrent(r)"
+            ng-repeat="r in vm.navRoutes">
+            <a ui-sref="{{r.name}}"
+               ng-bind-html="r.settings.content"></a>
+        </li>
+    </ul>
+</md-content>

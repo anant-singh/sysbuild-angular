@@ -1,0 +1,157 @@
+@color_lightblue: #52b9e9;
+@color_blue: #1171a3;
+@color_success: #43c83c;
+@color_warning: #f88529;
+@color_important: #fa3031;
+@color_violet: #932ab6;
+
+
+.site-sidenav .navi li i {
+    margin-right: 5px;
+}
+
+.site-sidenav .navi li span i {
+    margin: 0;
+}
+
+.site-sidenav .navi > li > a {
+    display: block;
+    padding: 12px 20px;
+    font-size: 15px;
+    color: #000000;
+    line-height: 25px;
+    text-decoration: none;
+    border-bottom: 1px solid #222;
+}
+
+.site-sidenav .navi > li > a:hover, .site-sidenav .navi > li.open > a {
+    border-bottom: 1px solid #222;
+    background-color: #222;
+    color: #fff;
+}
+
+.site-sidenav .navi li ul {
+    display: none;
+    background: #181818;
+}
+
+.site-sidenav .navi li.open ul {
+    display: block;
+}
+
+.site-sidenav .navi li ul li a {
+    display: block;
+    background: none;
+    padding: 10px 0;
+    padding-left: 30px;
+    text-decoration: none;
+    color: #999;
+    border-bottom: 1px solid #222;
+}
+
+.site-sidenav .navi li ul li.active a {
+    background: #131313;
+    border-bottom: 1px solid #222;
+}
+
+.site-sidenav .navi li ul li a:hover {
+    background: #131313;
+    border-bottom: 1px solid #222;
+}
+
+.site-sidenav .sidebar-inner {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    z-index: 60;
+}
+
+.site-sidenav .sidebar-inner ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+/* Sidebar colors */
+
+.site-sidenav .navi > li.nlightblue > a:hover,
+.site-sidenav .navi > li.open.nlightblue > a,
+.site-sidenav .navi > li.current.nlightblue > a {
+    background: @color_lightblue !important;
+    -webkit-transition: background 0.5s ease;
+    -moz-transition: background 0.5s ease;
+    -o-transition: background 0.5s ease;
+    transition: background 0.5s ease;
+}
+
+.site-sidenav .navi > li.nblue > a:hover,
+.site-sidenav .navi > li.open.nblue > a,
+.site-sidenav .navi > li.current.nblue > a {
+    background: @color_blue !important;
+    -webkit-transition: background 0.5s ease;
+    -moz-transition: background 0.5s ease;
+    -o-transition: background 0.5s ease;
+    transition: background 0.5s ease;
+}
+
+.site-sidenav .navi > li.ngreen > a:hover,
+.site-sidenav .navi > li.open.ngreen > a,
+.site-sidenav .navi > li.current.ngreen > a {
+    background: @color_success !important;
+    -webkit-transition: background 0.5s ease;
+    -moz-transition: background 0.5s ease;
+    -o-transition: background 0.5s ease;
+    transition: background 0.5s ease;
+}
+
+.site-sidenav .navi > li.norange > a:hover,
+.site-sidenav .navi > li.open.norange > a,
+.site-sidenav .navi > li.current.norange > a {
+    background: @color_warning !important;
+    -webkit-transition: background 0.5s ease;
+    -moz-transition: background 0.5s ease;
+    -o-transition: background 0.5s ease;
+    transition: background 0.5s ease;
+}
+
+.site-sidenav .navi > li.nred > a:hover,
+.site-sidenav .navi > li.open.nred > a,
+.site-sidenav .navi > li.current.nred > a {
+    background: @color_important !important;
+    -webkit-transition: background 0.5s ease;
+    -moz-transition: background 0.5s ease;
+    -o-transition: background 0.5s ease;
+    transition: background 0.5s ease;
+}
+
+.site-sidenav .navi > li.nviolet > a:hover,
+.site-sidenav .navi > li.open.nviolet > a,
+.site-sidenav .navi > li.current.nviolet > a {
+    background: @color_violet !important;
+    -webkit-transition: background 0.5s ease;
+    -moz-transition: background 0.5s ease;
+    -o-transition: background 0.5s ease;
+    transition: background 0.5s ease;
+}
+
+
+
+/*.sidebar-inner ul li {
+    list-style-type: none;
+}
+
+.sidebar-inner .navi > li > a {
+    background-color: #333 !important;
+}
+
+.sidebar-inner .navi li ul li a {
+    color: #fff;
+}
+
+.sidebar-inner .navi li ul li a:hover {
+    color: @color_lightblue;
+}
+
+.sidebar-inner .navi li ul li a:disabled {
+    color: #999;
+}*/

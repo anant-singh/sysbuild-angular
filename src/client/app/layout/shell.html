@@ -1,0 +1,28 @@
+<md-sidenav class="site-sidenav md-sidenav-left md-whiteframe-z2"
+            md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')"
+            tabindex="-1" flex>
+    <ng-include src="'app/layout/sidebar.html'" layout="column" flex></ng-include>
+</md-sidenav>
+
+
+<div id="content" class="content" layout="column" role="main" flex ng-controller="ShellController as vm">
+    <md-toolbar class="md-default-theme">
+        <div class="md-toolbar-tools docs-toolbar-tools" ng-click="toggleMenu()" role="button">
+            <button class="md-icon-button md-button md-default-theme" hide-gt-sm aria-label="Toggle Menu">
+                <i class="fa fa-bars"></i>
+            </button>
+            <h2><i class="fa fa-terminal"></i> System Programming</h2>
+        </div>
+    </md-toolbar>
+    <md-content>
+        <div ui-view class="shuffle-animation"></div>
+
+        <div ngplus-overlay
+             ngplus-overlay-delay-in="50"
+             ngplus-overlay-delay-out="700"
+             ngplus-overlay-animation="dissolve-animation">
+            <img src="../images/busy.gif"/>
+    </md-content>
+</div>
+
+

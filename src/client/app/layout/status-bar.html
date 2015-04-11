@@ -1,0 +1,23 @@
+<div class="footer" flex>
+    <div class="col-sm-6">
+        <div class="row">
+            <div class="col-sm-5">
+                <p>VM state:
+                    <span data-bind="text: vmState, css: vmStateClass">Booting</span>
+                    <span class="label label-info"><span data-bind="text: vmMips">0</span> MIPS</span>
+                </p>
+            </div>
+            <div class="col-sm-7">
+                <p>Compiler:
+                    <span data-bind="text: compileStatus, css: compileStatusClass, visible: !showErrorWarningLabel()">Idle</span>
+                    <a href="#"
+                       data-bind="html: errorWarningLabel, visible: showErrorWarningLabel, css: compileStatusClass"
+                       data-toggle="modal" data-target="#gcc-error-window"></a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="container col-sm-6 pull-right">
+        <p class="text-muted pull-right"><img width="12px" src="images/imark_bold.gif" alt="University of Illinois icon"><small>&nbsp;Copyright &copy; 2015 The Board of Trustees at the University of Illinois. <a target="_blank" href="https://github.com/cs-education/sysbuild#licence">Attribution and legal information</a></small></p>
+    </div>
+</div>
