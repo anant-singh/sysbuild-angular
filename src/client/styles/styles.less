@@ -5,6 +5,63 @@
 @color_important: #fa3031;
 @color_violet: #932ab6;
 
+/*#region Thin footer */
+#footer-container .footer {
+    min-height: 27px;
+    background-color: #f5f5f5;
+}
+
+#footer-container .footer > .container {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+#footer-container .footer p {
+    margin: 4px 0;
+}
+
+/* hack for the gcc options + program args + compile button toolbar */
+#compile-opts-container .col-sm-1,
+#compile-opts-container .col-sm-10,
+#compile-opts-container .col-sm-11 {
+    padding: 1px;
+}
+
+#compile-opts-container .row {
+    margin: 0px;
+    padding: 1px;
+}
+
+#compile-opts-container .btn-xs{
+    font-size: 14px;
+    line-height: 1.5;
+    margin-top: 3px;
+}
+
+#compile-opts-container input {
+    padding: 2px;
+    height: 20px;
+}
+
+#compile-opts-container .control-label {
+    padding-right: 2px;
+}
+/*#endregion */
+
+/*#region sidebar */
+
+.chapters-content{
+
+}
+    .chapters-content .chapter-header{
+        background-color: #f5f5f5;
+        font-size: 1.1em;
+    }
+
+.sidenav-content{
+    background: #111;
+    color: #eee;
+}
 
 .site-sidenav .navi li i {
     margin-right: 5px;
@@ -14,7 +71,7 @@
     margin: 0;
 }
 
-.site-sidenav .navi > li > a {
+.a_section {
     display: block;
     padding: 12px 20px;
     font-size: 15px;
@@ -24,7 +81,7 @@
     border-bottom: 1px solid #222;
 }
 
-.site-sidenav .navi > li > a:hover, .site-sidenav .navi > li.open > a {
+.a_section:hover, .site-sidenav .navi > li.open > a {
     border-bottom: 1px solid #222;
     background-color: #222;
     color: #fff;
@@ -155,3 +212,166 @@
 .sidebar-inner .navi li ul li a:disabled {
     color: #999;
 }*/
+
+/*#endregion*/
+
+/*#region Angular ng-include, ui-view, ng-repeat shuffle animations*/
+
+.shuffle-animation.ng-enter,
+.shuffle-animation.ng-leave {
+    position: relative;
+}
+
+.shuffle-animation.ng-enter {
+    -moz-transition: ease-out all 0.3s 0.4s;
+    -o-transition: ease-out all 0.3s 0.4s;
+    -webkit-transition: ease-out all 0.3s 0.4s;
+    transition: ease-out all 0.3s 0.4s;
+    bottom: 2em;
+    opacity: 0;
+}
+
+.shuffle-animation.ng-enter.ng-enter-active {
+    bottom: 0;
+    opacity: 1;
+}
+
+.shuffle-animation.ng-leave {
+    -moz-transition: 0.3s ease-out all;
+    -o-transition: 0.3s ease-out all;
+    -webkit-transition: 0.3s ease-out all;
+    transition: 0.3s ease-out all;
+    bottom: 0;
+    opacity: 1;
+}
+
+.shuffle-animation.ng-leave.ng-leave-active {
+    bottom: 2em;
+    opacity: 0;
+}
+
+/*#endregion*/
+
+/*# */
+.md-header {
+    height: 64px;
+}
+
+
+.ch_button {
+    width: 250px;
+    height: 50px;
+    color: #F0F1F0;
+    font-size: 0.8em;
+    background: #1BBA9A;
+    outline: none;
+    cursor: pointer;
+    border: none;
+    margin-top: 1em;
+}
+
+.info-overlay {
+    color: #F0F1F0;
+    font-size: 20px;
+    text-align: left;
+    height: 100%;
+    background: #b8bab3;
+    opacity: 0.5;
+}
+
+.lessons-opt {
+    margin-top: 0.5em;
+    padding: 5px;
+}
+
+.clear {
+    clear: both;
+}
+.lessons-container {
+    /* */
+}
+
+    .lessons-container .content-main{
+        padding: 10px;
+        min-height: 10em;
+        margin-bottom: 1em;
+    }
+
+    .lessons-container .instructions{
+        padding: 10px;
+        background-color: #dedede;
+    }
+
+        .lessons-container .instructions .header{
+            display: inline;
+            padding: 10px;
+            position: relative;
+            top: -1.0em;
+            background-color: #dedede;
+        }
+
+        .lessons-container .instructions .content{
+            padding: 10px 0px;
+            min-height: 10em;
+            background-color: #dedede;
+            font-size: 0.8em;
+        }
+            .lessons-container .instructions .content h1{
+                font-size: 1.2em;
+            }
+
+.videogular-container {
+    width: 100%;
+    height: 320px;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* Editor region */
+
+
+
+.editor-toolbar {
+    font-size: 0.9em;
+    min-height: 0px;
+}
+
+.secondary-toolbar {
+    height: auto;
+
+}
+
+    .secondary-toolbar > md-select{
+        margin-top: 0;
+    }
+
+.control-group label {
+    padding-right: 0.5em;
+}
+
+
+/* endregion */
+
+/* Terminal 1 region */
+
+.tty0-container {
+    width: 493px;
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    z-index: 999;
+}
+
+.tty0-title {
+    min-height: 0;
+    height: 40px;
+    border-radius: 9px 9px 0px 0px;
+}
+
+.tty0-toggle {
+    bottom: 20px;
+    right: 20px;
+    position: absolute;
+}
+
+/* endregion */

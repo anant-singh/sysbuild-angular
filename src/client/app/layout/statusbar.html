@@ -1,0 +1,28 @@
+<md-toolbar class="md-primary md-hue-3 md-whiteframe-z2" layout-fill layout="row">
+    <md-content id="vm_state" flex="25">
+        <p>VM State:
+            <span ng-class="vm.vmStateClass">{{vm.vmState}}</span>
+            <span class="label label-info">{{vm.vmMips}} MIPs</span>
+        </p>
+    </md-content>
+    <md-content id="compiler_state" flex="25">
+        <p>Compiler:
+            <span ng-class="vm.compileStatusClass" ng-show="!showErrorWarningLabel()">{{vm.vmMips}}</span>
+            <a href="#" ng-show ="vm.showErrorWarningLabel()" ng-class="vm.compileStatusClass"
+                >{{vm.errorWarningLabel}}</a>
+        </p>
+    </md-content>
+    <md-content id="info_container" flex>
+        <p class="text-muted pull-right">
+            <img width="12px" src="images/imark_bold.gif"
+                 alt="University of Illinois icon">
+            <small>
+                &nbsp;Copyright &copy; 2015 The Board of Trustees at the University of Illinois.
+                <a target="_blank"
+                   href="https://github.com/cs-education/sysbuild#licence">
+                    Attribution and legal information
+                </a>
+            </small>
+        </p>
+    </md-content>
+</md-toolbar>

@@ -1,0 +1,54 @@
+<md-toolbar class="md-default-theme">
+    <div class="md-toolbar-tools">
+        <h2>
+            <span>{{vm.title}}</span>
+        </h2>
+        <span flex></span>
+    </div>
+</md-toolbar>
+<md-content class="lessons-container" layout="column" flex>
+    <md-select class="lessons-opt" placeholder="Select a Lesson" ng-model="vm.currentSection">
+        <md-optgroup ng-repeat="(ch_key,chapter) in vm.lessons.chapters">
+            <md-optgroup label="{{chapter.name}}">
+                <md-option ng-value="section"
+                           ng-repeat="(s_key,section) in chapter.sections"
+                           ng-click="vm.updateSection(ch_key, section)">{{section.name}}</md-option>
+            </md-optgroup>
+        </md-optgroup>
+    </md-select>
+
+    <div class="content-main" ng-hide="vm.isSelected">
+        <h3 ng-hide="vm.isSelected">An introduction to system programming and C</h3>
+        <p ng-hide="vm.isSelected">By Lawrence Angrave at the University of Illinois at Urbana-Champaign 2015</p>
+    </div>
+    <div class="content-main" ng-show="vm.isSelected">
+        <videogular class="videogular-container" vg-player-ready="vm.onPlayerReady($API)">
+            <vg-media vg-src="vm.videoConfig.sources">
+            </vg-media>
+            <vg-controls>
+                <vg-play-pause-button></vg-play-pause-button>
+                <vg-time-display>{{ currentTime | date:'mm:ss' }}</vg-time-display>
+                <vg-scrub-bar>
+                    <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+                </vg-scrub-bar>
+                <vg-time-display>{{ timeLeft | date:'mm:ss' }}</vg-time-display>
+                <vg-volume>
+                    <vg-mute-button></vg-mute-button>
+                    <vg-volume-bar></vg-volume-bar>
+                </vg-volume>
+                <vg-fullscreen-button></vg-fullscreen-button>
+            </vg-controls>
+            <vg-overlay-play></vg-overlay-play>
+            <vg-buffering></vg-buffering>
+        </videogular>
+    </div>
+    <div class="instructions" ng-hide="vm.docFileURL === ''">
+        <h4 class="md-whiteframe-z1 header">Instructions</h4>
+        <span class="content" btf-markdown ng-include="vm.docFileURL" ng-show="vm.isSelected">
+
+        </span>
+        <div class="clear"></div>
+    </div>
+</md-content>
+
+

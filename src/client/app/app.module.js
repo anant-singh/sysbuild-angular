@@ -3,10 +3,10 @@
 
     angular.module('app', [
         'app.core',
-        'app.widgets',
         'app.admin',
-        'app.dashboard',
+        'app.editor',
         'app.layout',
+        'app.lessons',
         'jor1k.module'
     ]);
 

@@ -71,7 +71,7 @@ gulp.task('setupJor1k', ['clean-jor1k'], function(){
 
     return gulp
         .src(['**', '!.git'], config.jor1k)
-        .pipe(gulp.dest(config.jor1kDest))
+        .pipe(gulp.dest(config.jor1kDest));
 });
 
 /**
@@ -82,8 +82,20 @@ gulp.task('setupJor1kEfs', ['clean-jor1k'], function(){
     log('Copying the extended file system to the app directory');
 
     return gulp
-        .src(['**', '.git'], config.jor1kEfs)
-        .pipe(gulp.dest(config.jor1kDest + 'jor1k-sysroot/'))
+        .src(['**', '!.git'], config.jor1kEfs)
+        .pipe(gulp.dest(config.jor1kDest + 'jor1k-sysroot/'));
+});
+
+gulp.task('clean-jor1kBuild', function(done){
+    clean(config.build + 'js/jor1k-master-min.js', done);
+});
+
+gulp.task('copyJor1k', ['clean-jor1kBuild'], function() {
+    log('Copying Jor1k js to build');
+
+    return gulp
+        .src([config.jor1kDest + 'bin/jor1k-master-min.js'])
+        .pipe(gulp.dest(config.build + 'js/'));
 });
 
 /**
@@ -240,7 +252,7 @@ gulp.task('build', ['optimize', 'images', 'fonts'], function() {
  * and inject them into the new index.html
  * @return {Stream}
  */
-gulp.task('optimize', ['inject', 'test'], function() {
+gulp.task('optimize', ['inject', 'copyJor1k'], function() {
     log('Optimizing the js, css, and html');
 
     var assets = $.useref.assets({searchPath: './'});

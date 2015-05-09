@@ -1,28 +1,35 @@
-<md-sidenav class="site-sidenav md-sidenav-left md-whiteframe-z2"
-            md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')"
-            tabindex="-1" flex>
-    <ng-include src="'app/layout/sidebar.html'" layout="column" flex></ng-include>
-</md-sidenav>
 
 
-<div id="content" class="content" layout="column" role="main" flex ng-controller="ShellController as vm">
-    <md-toolbar class="md-default-theme">
-        <div class="md-toolbar-tools docs-toolbar-tools" ng-click="toggleMenu()" role="button">
-            <button class="md-icon-button md-button md-default-theme" hide-gt-sm aria-label="Toggle Menu">
-                <i class="fa fa-bars"></i>
-            </button>
-            <h2><i class="fa fa-terminal"></i> System Programming</h2>
-        </div>
-    </md-toolbar>
-    <md-content>
-        <div ui-view class="shuffle-animation"></div>
+<div layout="row" flex>
+    <div id="content" class="content" layout="column" role="main" flex>
+        <md-toolbar class="md-default-theme">
+            <div class="md-toolbar-tools docs-toolbar-tools" ng-click="vm.toggleMenu(e)" role="button">
+                <h2><i class="fa fa-code"></i>System Programming</h2>
+            </div>
+        </md-toolbar>
+        <md-content layout="column" flex>
 
-        <div ngplus-overlay
-             ngplus-overlay-delay-in="50"
-             ngplus-overlay-delay-out="700"
-             ngplus-overlay-animation="dissolve-animation">
-            <img src="../images/busy.gif"/>
-    </md-content>
+            <div class="jor1k-container" ng-controller="Jor1kController as vm">
+                <md-button class="md-fab tty0-toggle" aria-label="Toggle Terminal" ng-click="vm.tty0Toggle()">
+                    <i class="fa fa-terminal"></i>
+                </md-button>
+                <div class="tty0-container fx-zoom-normal fx-easing-back" draggable ng-show="vm.tty0Visible">
+                <md-toolbar class="tty0-title md-accent">
+                    <div class="md-toolbar-tools docs-toolbar-tools">
+                        <h2><i class="fa fa-terminal"></i>Terminal 1</h2>
+                        <span flex></span>
+                    </div>
+                </md-toolbar>
+                <div id="tty0"></div>
+                </div>
+            </div>
+            <div ui-view="main" class="shuffle-animation" layout="column" flex></div>
+
+        </md-content>
+    </div>
 </div>
-
-
+<md-sidenav class="md-sidenav-right md-whiteframe-z2"
+            md-component-id="right" md-is-locked-open="$mdMedia('gt-sm')"
+            tabindex="-1" flex="30">
+    <div ui-view="sidenavRight" layout="column" flex></div>
+</md-sidenav>
