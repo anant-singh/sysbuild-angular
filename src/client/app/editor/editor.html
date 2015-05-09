@@ -1,0 +1,21 @@
+<md-toolbar class="md-primary md-hue-1 editor-toolbar">
+    <div class="md-toolbar-tools secondary-toolbar">
+        <md-select placeholder="Ace Theme" ng-model="vm.aceTheme">
+            <md-option ng-value="theme"
+                       ng-repeat="theme in vm.aceThemes"
+                       ng-click="vm.updateTheme(theme)">{{theme}}</md-option>
+        </md-select>
+        <md-input-container>
+            <label>Font Size</label>
+            <input ng-model="vm.fontSize" type="number" step="any" min="12" max="24">
+        </md-input-container>
+    </div>
+</md-toolbar>
+<div ui-ace="vm.aceOptions" class="editor-container" layout="column" flex>/*Write your C code here*/
+#include &lt;stdio.h&gt;
+
+int main() {
+    printf("Hello world!\n");
+    return 0;
+}
+</div>
