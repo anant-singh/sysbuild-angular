@@ -5,23 +5,28 @@
         .module('jor1k.module')
         .controller('Jor1kController', Jor1kController);
 
-    Jor1kController.$inject = ['jor1kInterface', 'logger'];
+    Jor1kController.$inject = ['jor1kGUI', 'logger'];
 
     /* @ngInject */
-    function Jor1kController(jor1kInterface, logger) {
+    function Jor1kController(jor1kGUI, logger) {
         /* jshint validthis: true */
         var vm = this;
-
+        vm.tty0Visible = false;
         vm.activate = activate;
-        vm.title = 'Jor1kController';
+        vm.title = 'Terminals';
         vm.termDiv = document.getElementById('tty0');
+        vm.tty0Toggle = tty0Toggle;
 
         activate();
 
         ////////////////
 
         function activate() {
-            jor1kInterface.boot(vm.termDiv);
+            jor1kGUI.boot(vm.termDiv);
+        }
+
+        function tty0Toggle(){
+            vm.tty0Visible = !vm.tty0Visible;
         }
 
 
