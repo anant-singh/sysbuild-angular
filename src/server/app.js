@@ -8,6 +8,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var port = process.env.PORT || 8001;
 var four0four = require('./utils/404')();
+var request = require('request');
 
 var environment = process.env.NODE_ENV;
 
@@ -27,6 +28,11 @@ switch (environment){
         console.log('** BUILD **');
         app.use(express.static('./build/'));
         // Any invalid calls for templateUrls are under app/* and should return 404
+        app.use('/sysassets/*', function(req, res, next){
+            var newUrl = 'http://cs-education.github.io' + req.originalUrl;
+            console.log(req.originalUrl);
+            request(newUrl).pipe(res);
+        });
         app.use('/app/*', function(req, res, next) {
             four0four.send404(req, res);
         });
@@ -40,6 +46,11 @@ switch (environment){
         app.use(express.static('./tmp'));
         app.use(express.static('./src/client/app/jor1k-dep/'));
         // Any invalid calls for templateUrls are under app/* and should return 404
+        app.use('/sysassets/*', function(req, res, next){
+            var newUrl = 'http://cs-education.github.io' + req.originalUrl;
+            console.log(req.originalUrl);
+            request(newUrl).pipe(res);
+        });
         app.use('/app/*', function(req, res, next) {
             four0four.send404(req, res);
         });
